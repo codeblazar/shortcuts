@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shortcuts</title>
+  <meta name="description" content="Fast, printable shortcut cheat sheets.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Shortcuts</h1>
+    <p class="tagline">Short, sharp, and printable.</p>
+    <input id="filter" class="filter" type="search" placeholder="Filter… e.g. excel, search, outlook" aria-label="Filter cheat sheets">
+  </header>
+
+  <main class="grid" id="cards">
+    <article class="card" data-tags="outlook email office microsoft">
+      <h2>Outlook Shortcuts</h2>
+      <p>The shortcuts that actually save time. Compact one-pager.</p>
+      <div class="actions">
+        <a class="btn" href="files/outlook_shortcuts_cheatsheet_compact.pdf" download>Download</a>
+        <a class="btn ghost" href="files/outlook_shortcuts_cheatsheet_compact.pdf" target="_blank" rel="noopener">View</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="google search operators research">
+      <h2>Google Search Essentials</h2>
+      <p>Most useful operators, with examples. One page.</p>
+      <div class="actions">
+        <a class="btn" href="files/google_search_cheatsheet_essentials.pdf" download>Download</a>
+        <a class="btn ghost" href="files/google_search_cheatsheet_essentials.pdf" target="_blank" rel="noopener">View</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="word office microsoft">
+      <h2>Word Shortcuts</h2>
+      <p>Navigation, editing, formatting, and search. One page.</p>
+      <div class="actions">
+        <a class="btn" href="files/word_shortcuts_cheatsheet.pdf" download>Download</a>
+        <a class="btn ghost" href="files/word_shortcuts_cheatsheet.pdf" target="_blank" rel="noopener">View</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="excel office spreadsheets microsoft">
+      <h2>Excel Shortcuts</h2>
+      <p>Navigation, editing, formatting, and formulas. One page.</p>
+      <div class="actions">
+        <a class="btn" href="files/excel_shortcuts_cheatsheet.pdf" download>Download</a>
+        <a class="btn ghost" href="files/excel_shortcuts_cheatsheet.pdf" target="_blank" rel="noopener">View</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="y"></span> <a href="./">Shortcuts</a>. Clean, printable sheets.</small>
+  </footer>
+
+  <script>
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Simple client-side filter
+    const q = document.getElementById('filter');
+    const cards = Array.from(document.querySelectorAll('.card'));
+    q.addEventListener('input', () => {
+      const term = q.value.trim().toLowerCase();
+      cards.forEach(c => {
+        const text = (c.textContent + ' ' + c.dataset.tags).toLowerCase();
+        c.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
