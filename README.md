@@ -7,6 +7,7 @@ A collection of essential keyboard shortcuts and cheat sheets for popular applic
 - Google Search Essentials: `files/google_search_cheatsheet_essentials.pdf`
 - Outlook Shortcuts: `files/outlook_shortcuts_cheatsheet_compact.pdf`
 - Word Shortcuts: `files/word_shortcuts_cheatsheet.pdf`
+- Docker Shortcuts: `files/docker_compose_cheatsheet.pdf`
 
 ## Usage
 Open `index.html` for a web interface to access all cheat sheets.
